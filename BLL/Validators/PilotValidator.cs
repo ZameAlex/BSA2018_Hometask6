@@ -10,6 +10,7 @@ namespace BSA2018_Hometask4.BLL.Validators
     {
         public PilotValidator()
         {
+            RuleFor(f => f.ID).Empty();
             RuleFor(p => p.FirstName).NotNull().NotEmpty().MaximumLength(20);
             RuleFor(p => p.LastName).NotNull().NotEmpty().MaximumLength(30);
             RuleFor(p => p.Birthday).NotNull().LessThan(new DateTime(1995, 1, 1));

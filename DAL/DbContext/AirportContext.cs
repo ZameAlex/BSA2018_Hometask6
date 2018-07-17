@@ -13,7 +13,7 @@ namespace BSA2018_Hometask4.DAL.DbContext
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server = DESKTOP-5S77NGN; Database = AirportDB; Trusted_Connection = True;");
+            optionsBuilder.UseSqlServer(@"Server = .\SQLEXPRESS; Database = AirportDB; Trusted_Connection = True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

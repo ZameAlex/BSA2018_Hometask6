@@ -10,6 +10,7 @@ namespace BSA2018_Hometask4.BLL.Validators
     {
         public CrewValidator()
         {
+            RuleFor(f => f.ID).Empty();
             RuleFor(c => c.Pilot).NotNull().GreaterThan(0);
             RuleForEach(c => c.Stewadress).NotNull().GreaterThan(0);
         }

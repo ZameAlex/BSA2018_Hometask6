@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BSA2018_Hometask4.BLL.csproj" />
-    <ProjectReference Include="..\BSA2018_Hometask4.Shared\BSA2018_Hometask4.Shared.csproj" />
+    <ProjectReference Include="..\BLL\BSA2018_Hometask6.BLL.csproj" />
+    <ProjectReference Include="..\BSA2018_Hometask4.Shared\BSA2018_Hometask6.Shared.csproj" />
   </ItemGroup>
 
 </Project>

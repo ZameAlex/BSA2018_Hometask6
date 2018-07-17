@@ -162,7 +162,7 @@ namespace BSA2018_Hometask4.BLL.Mapping
                 Name = value.Name,
                 Type = value.Type.Id,
                 Created = value.Created,
-                Expires = value.Expired
+                Expires = DateTime.Now - value.Expired
             };
         }
 
@@ -174,7 +174,7 @@ namespace BSA2018_Hometask4.BLL.Mapping
                 Name = value.Name,
                 Type = unitOfWork.Types.Get(value.Type),
                 Created = value.Created,
-                Expired = value.Expires
+                Expired = DateTime.Now.AddDays(value.Expires.Days)
             };
         }
 
@@ -206,37 +206,6 @@ namespace BSA2018_Hometask4.BLL.Mapping
             };
         }
 
-
-        //public MapperConfiguration ConfigureMapping()
-        //{
-        //    var config = new MapperConfiguration(cfg =>
-        //    {
-        //        cfg.CreateMap<Flight, FlightDto>();
-        //        cfg.CreateMap<FlightDto, Flight>();
-
-        //        cfg.CreateMap<Ticket, TicketDto>();
-        //        cfg.CreateMap<TicketDto, Ticket>();
-
-        //        cfg.CreateMap<Departure, DepartureDto>();
-        //        cfg.CreateMap<DepartureDto, Departure>();
-
-        //        cfg.CreateMap<Stewadress, StewadressDto>();
-        //        cfg.CreateMap<StewadressDto, Stewadress>();
-
-        //        cfg.CreateMap<Pilot, PilotDto>();
-        //        cfg.CreateMap<PilotDto, Pilot>();
-
-        //        cfg.CreateMap<Crew, CrewDto>();
-        //        cfg.CreateMap<CrewDto, Crew>();
-
-        //        cfg.CreateMap<Plane, PlaneDto>();
-        //        cfg.CreateMap<PlaneDto, Plane>();
-
-        //        cfg.CreateMap<PlaneType, TypeDto>();
-        //        cfg.CreateMap<TypeDto, Plane>();
-        //    }
-        //    );
-        //    return config;
-        //}
+       
     }
 }

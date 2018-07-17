@@ -10,6 +10,7 @@ namespace BSA2018_Hometask4.BLL.Validators
     {
         public StewadressValidator()
         {
+            RuleFor(f => f.ID).Empty(); 
             RuleFor(s => s.FirstName).NotNull().NotEmpty().MaximumLength(20);
             RuleFor(s => s.LastName).NotNull().NotEmpty().MaximumLength(30);
             RuleFor(s => s.Birthday).NotNull().LessThan(new DateTime(2000, 1, 1));

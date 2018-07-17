@@ -10,6 +10,7 @@ namespace BSA2018_Hometask4.BLL.Validators
     {
         public FlightValidator()
         {
+            RuleFor(f => f.ID).Empty();
             RuleFor(f => f.Number).NotNull().NotEmpty();
             RuleFor(f => f.DeparturePoint).NotNull().NotEmpty();
             RuleFor(f => f.Destination).NotNull().NotEmpty();

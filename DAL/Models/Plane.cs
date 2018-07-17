@@ -11,7 +11,6 @@ namespace DAL.Models
         public string Name { get; set; }
         public PlaneType Type { get; set; }
         public DateTime Created { get; set; }
-        [DataType(DataType.DateTime)]
-        public TimeSpan Expired { get; set; }
+        public DateTime Expired { get; set; }
     }
 }

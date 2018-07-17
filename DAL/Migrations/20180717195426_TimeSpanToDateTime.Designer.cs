@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BSA2018_Hometask4.DAL.Migrations
 {
     [DbContext(typeof(AirportContext))]
-    [Migration("20180714220541_TimeSpanChanged")]
-    partial class TimeSpanChanged
+    [Migration("20180717195426_TimeSpanToDateTime")]
+    partial class TimeSpanToDateTime
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -111,7 +111,7 @@ namespace BSA2018_Hometask4.DAL.Migrations
 
                     b.Property<DateTime>("Created");
 
-                    b.Property<TimeSpan>("Expired");
+                    b.Property<DateTime>("Expired");
 
                     b.Property<string>("Name");
 

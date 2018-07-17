@@ -13,7 +13,7 @@ namespace DAL.Repository
                 
         }
 
-        public void Update(TimeSpan expires,int id)
+        public void Update(DateTime expires,int id)
         {
             Get(id).Expired = expires;
             DbContext.SaveChanges();

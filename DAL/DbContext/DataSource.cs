@@ -280,8 +280,8 @@ namespace BSA2018_Hometask4.DAL.DbContext
                 {
                     Name = "Bobo",
                     Created = new DateTime(2015, 2, 1),
-                    Type = context.Types.Single(x=>x.Id==1),
-                    Expired = new TimeSpan(23, 0, 0)
+                    Type = context.Types.Single(x => x.Id == 1),
+                    Expired = DateTime.Now.AddDays(70)
                 }
                 );
                 context.Planes.Add(
@@ -290,8 +290,8 @@ namespace BSA2018_Hometask4.DAL.DbContext
                         Name = "Gutu",
                         Created = new DateTime(2014, 2, 1),
                         Type = context.Types.Single(x => x.Id == 1),
-                        Expired = new TimeSpan(11, 0, 0)
-                    }
+                        Expired = DateTime.Now.AddDays(300)
+        }
                     );
                 context.Planes.Add(
                     new Plane
@@ -299,7 +299,7 @@ namespace BSA2018_Hometask4.DAL.DbContext
                         Name = "Ulu",
                         Created = new DateTime(2012, 6, 23),
                         Type = context.Types.Single(x => x.Id == 2),
-                        Expired = new TimeSpan(0, 0, 0)
+                        Expired = DateTime.Now.AddDays(31)
                     }
                     );
                 context.Planes.Add(
@@ -308,7 +308,7 @@ namespace BSA2018_Hometask4.DAL.DbContext
                         Name = "Ukoz",
                         Created = new DateTime(2017, 11, 14),
                         Type = context.Types.Local.Single(x => x.Id == 2),
-                        Expired = new TimeSpan(0, 0, 0)
+                        Expired = DateTime.Now.AddDays(700)
                     }
                     );
                 context.SaveChanges();

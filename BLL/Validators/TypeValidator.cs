@@ -11,6 +11,7 @@ namespace BSA2018_Hometask4.BLL.Validators
     {
         public TypeValidator()
         {
+            RuleFor(f => f.ID).Empty();
             RuleFor(t => t.Model).NotNull().NotEmpty();
             RuleFor(t => t.Places).NotNull().GreaterThan(0);
         }

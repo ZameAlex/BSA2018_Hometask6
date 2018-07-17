@@ -109,7 +109,7 @@ namespace BSA2018_Hometask4.DAL.Migrations
 
                     b.Property<DateTime>("Created");
 
-                    b.Property<TimeSpan>("Expired");
+                    b.Property<DateTime>("Expired");
 
                     b.Property<string>("Name");
 

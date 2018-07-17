@@ -9,8 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BSA2018_Hometask4.Shared\BSA2018_Hometask4.Shared.csproj" />
-    <ProjectReference Include="..\DAL\BSA2018_Hometask4.DAL.csproj" />
+    <ProjectReference Include="..\BSA2018_Hometask4.Shared\BSA2018_Hometask6.Shared.csproj" />
+    <ProjectReference Include="..\DAL\BSA2018_Hometask6.DAL.csproj" />
   </ItemGroup>
 
 </Project>

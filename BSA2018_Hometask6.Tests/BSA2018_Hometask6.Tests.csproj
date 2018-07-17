@@ -4,4 +4,17 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FakeItEasy" Version="4.7.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
+    <PackageReference Include="NUnit" Version="3.10.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BSA2018_Hometask6.BLL.csproj" />
+    <ProjectReference Include="..\BSA2018_Hometask4.Shared\BSA2018_Hometask6.Shared.csproj" />
+    <ProjectReference Include="..\DAL\BSA2018_Hometask6.DAL.csproj" />
+  </ItemGroup>
+
 </Project>
