@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="7.6.104" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BSA2018_Hometask4.Shared\BSA2018_Hometask4.Shared.csproj" />
+    <ProjectReference Include="..\DAL\BSA2018_Hometask4.DAL.csproj" />
+  </ItemGroup>
+
+</Project>
