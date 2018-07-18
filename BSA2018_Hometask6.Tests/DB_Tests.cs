@@ -114,7 +114,7 @@ namespace BSA2018_Hometask6.Tests
 
             planeService.Update(plane, id);
             var planeResult = planeService.Get(id);
-            Assert.AreEqual(plane.Type, planeResult.Type);
+            Assert.AreEqual(plane.Created, planeResult.Created);
         }
 
         [Test]
