@@ -34,20 +34,39 @@ namespace BSA2018_Hometask4.DAL.DbContext
         public DbSet<TEntity> SetOf<TEntity>() where TEntity : Entity
         {
             if (Flights is IEnumerable<TEntity>)
+            {
+                Tickets.Load();
                 return Flights as DbSet<TEntity>;
+            }
             else if (Depatures is IEnumerable<TEntity>)
+            {
+                Flights.Load();
+                Crew.Load();
+                Planes.Load();
                 return Depatures as DbSet<TEntity>;
+            }
             else if (Crew is IEnumerable<TEntity>)
+            {
+                Pilots.Load();
+                Stewadresses.Load();
                 return Crew as DbSet<TEntity>;
+            }
             else if (Stewadresses is IEnumerable<TEntity>)
                 return Stewadresses as DbSet<TEntity>;
             else if (Pilots is IEnumerable<TEntity>)
                 return Pilots as DbSet<TEntity>;
             else if (Planes is IEnumerable<TEntity>)
+            {
+                Types.Load();
                 return Planes as DbSet<TEntity>;
+            }
             else if (Types is IEnumerable<TEntity>)
                 return Types as DbSet<TEntity>;
-            else return Tickets as DbSet<TEntity>;
+            else
+            {
+                Flights.Load();
+                return Tickets as DbSet<TEntity>;
+            }
         }
     }
 }

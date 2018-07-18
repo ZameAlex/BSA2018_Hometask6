@@ -9,7 +9,6 @@ namespace BSA2018_Hometask6.Tests.Fake.Repositories
     {
         public FakeTicketsRepo()
         {
-            var fRepo = new FakeFlightsRepo();
             entities.Add(
                 new Ticket
                 {

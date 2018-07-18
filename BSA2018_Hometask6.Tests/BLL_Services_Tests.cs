@@ -465,6 +465,30 @@ namespace BSA2018_Hometask6.Tests
             Assert.Throws<FluentValidation.ValidationException>(() => stewadressService.Update(stewadress2, id));
         }
 
+        [Test]
+        public void Mapper_When_update_ticket_Then_will_contain_new_price()
+        {
+            var ticketService = new TicketService(unitOfWork, mapper, new TicketValidator());
+            var flightService = new FlightService(unitOfWork, mapper, new FlightValidator());
+            var flight = new FlightDto()
+            {
+                DeparturePoint = "Kyiv",
+                DepartureTime = DateTime.Now,
+                Destination = "Lviv",
+                DestinationTime = DateTime.Now.AddHours(2),
+                Number = Guid.NewGuid(),
+                Tickets = new List<int> { 1 }
+            };
+            var id = flightService.Create(flight);
+            var ticket1 = new TicketDto()
+            {
+                Number = flightService.Get(id).Number,
+                Price = 290m,
+            };
+
+            ticketService.Update(ticket1, 1);
+            Assert.AreEqual(ticketService.Get(1).Price, ticket1.Price);
+        }
         #endregion
 
 

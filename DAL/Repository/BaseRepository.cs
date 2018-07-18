@@ -3,6 +3,7 @@ using DAL.Repository;
 using System.Collections.Generic;
 using System.Linq;
 using BSA2018_Hometask4.DAL.DbContext;
+using System;
 
 public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : DAL.Models.Entity
 {
@@ -30,7 +31,7 @@ public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : DAL.
 
     public virtual void Delete(int id)
     {
-        DbContext.SetOf<TEntity>().Remove(DbContext.SetOf<TEntity>().Single(x=>x.Id==id));
+        DbContext.SetOf<TEntity>().Remove(DbContext.SetOf<TEntity>().SingleOrDefault(x=>x.Id==id));
         DbContext.SaveChanges();
     }
 
@@ -46,8 +47,9 @@ public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : DAL.
 
     public virtual void Update(TEntity entity, int id)
     {
-        var temp = DbContext.SetOf<TEntity>().SingleOrDefault(x => x.Id == id);
-        temp = entity;
+        var list = DbContext.SetOf<TEntity>().ToList();
+        var temp = DbContext.SetOf<TEntity>().ToList().FindIndex(x => x.Id == id);
+        list[temp] = entity;
         DbContext.SaveChanges();
     }
 }
