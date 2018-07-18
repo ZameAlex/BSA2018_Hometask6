@@ -29,9 +29,9 @@ namespace BSA2018_Hometask4.Controllers
             {
                 return Ok(service.Get());
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return NotFound();
+                return NotFound(ex);
             }
         }
 
@@ -43,9 +43,9 @@ namespace BSA2018_Hometask4.Controllers
             {
                 return Ok(service.Get(id));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return NotFound();
+                return NotFound(ex);
             }
         }
 
@@ -55,16 +55,16 @@ namespace BSA2018_Hometask4.Controllers
         {
             try
             {
-                service.Create(value);
-                return Ok();
+                
+                return Ok(service.Create(value));
             }
             catch (ValidationException e)
             {
                 return BadRequest(e.Message);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest(ex);
             }
         }
 
@@ -75,19 +75,19 @@ namespace BSA2018_Hometask4.Controllers
             try
             {
                 service.Update(stewadress, id);
-                return Ok();
+                return Ok("success");
             }
-            catch (NotFoundException)
+            catch (NotFoundException ex)
             {
-                return NotFound();
+                return NotFound(ex);
             }
             catch (ValidationException e)
             {
                 return BadRequest(e.Message);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest(ex);
             }
         }
 
@@ -100,9 +100,9 @@ namespace BSA2018_Hometask4.Controllers
                 service.Delete(id);
                 return NoContent();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return NotFound();
+                return NotFound(ex);
             }
         }
 
@@ -115,9 +115,9 @@ namespace BSA2018_Hometask4.Controllers
                 service.Delete(stewadress);
                 return NoContent();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return NotFound();
+                return NotFound(ex);
             }
         }
     }

@@ -47,8 +47,6 @@ public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : DAL.
 
     public virtual void Update(TEntity entity, int id)
     {
-        var temp = DbContext.SetOf<TEntity>().SingleOrDefault(x => x.Id == id);
-        temp = entity;
         DbContext.SaveChanges();
     }
 }

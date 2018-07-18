@@ -29,9 +29,9 @@ namespace BSA2018_Hometask4.Controllers
             {
                 return Ok(service.Get());
             }
-            catch (Exception)
+            catch (Exception ex )
             {
-                return NotFound();
+                return NotFound(ex);
             }
         }
 
@@ -43,9 +43,9 @@ namespace BSA2018_Hometask4.Controllers
             {
                 return Ok(service.Get(id));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return NotFound();
+                return NotFound(ex);
             }
         }
 
@@ -62,9 +62,9 @@ namespace BSA2018_Hometask4.Controllers
             {
                 return BadRequest(e.Message);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest(ex);
             }
         }
 
@@ -77,17 +77,17 @@ namespace BSA2018_Hometask4.Controllers
                 service.Update(crew, id);
                 return Ok();
             }
-            catch(NotFoundException)
+            catch(NotFoundException ex)
             {
-                return NotFound();
+                return NotFound( ex);
             }
             catch (ValidationException e)
             {
                 return BadRequest(e.Message);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest(ex);
             }
         }
 
@@ -100,9 +100,9 @@ namespace BSA2018_Hometask4.Controllers
                 service.Delete(id);
                 return NoContent();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return NotFound();
+                return NotFound(ex);
             }
         }
 
@@ -115,9 +115,9 @@ namespace BSA2018_Hometask4.Controllers
                 service.Delete(crew);
                 return NoContent();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return NotFound();
+                return NotFound(ex);
             }
         }
     }

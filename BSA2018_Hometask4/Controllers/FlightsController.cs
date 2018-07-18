@@ -29,9 +29,9 @@ namespace BSA2018_Hometask4.Controllers
             {
                 return Ok(service.Get());
             }
-            catch(Exception e)
+            catch (Exception ex)
             {
-                return NotFound();
+                return NotFound(ex);
             }
         }
 
@@ -43,9 +43,9 @@ namespace BSA2018_Hometask4.Controllers
             {
                 return Ok(service.Get(id));
             }
-            catch(Exception)
+            catch (Exception ex)
             {
-                return NotFound();
+                return NotFound(ex);
             }
         }
 
@@ -62,9 +62,9 @@ namespace BSA2018_Hometask4.Controllers
             {
                 return BadRequest(e.Message);
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                return BadRequest();
+                return BadRequest(ex);
             }
         }
 
@@ -75,19 +75,19 @@ namespace BSA2018_Hometask4.Controllers
             try
             {
                 service.Update(flight, id);
-                return Ok();
+                return Ok("success");
             }
-            catch (NotFoundException)
+            catch (NotFoundException ex)
             {
-                return NotFound();
+                return NotFound(ex);
             }
             catch (ValidationException e)
             {
                 return BadRequest(e.Message);
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                return BadRequest();
+                return BadRequest(ex);
             }
         }
 
@@ -98,19 +98,19 @@ namespace BSA2018_Hometask4.Controllers
             try
             {
                 service.Update(value.Item1, value.Item2, id);
-                return Ok();
+                return Ok("success");
             }
-            catch (NotFoundException)
+            catch (NotFoundException ex)
             {
-                return NotFound();
+                return NotFound(ex);
             }
             catch (ValidationException e)
             {
                 return BadRequest(e.Message);
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                return BadRequest();
+                return BadRequest(ex);
             }
         }
 
@@ -123,9 +123,9 @@ namespace BSA2018_Hometask4.Controllers
                 service.Delete(id);
                 return NoContent();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return NotFound();
+                return NotFound(ex);
             }
         }
 
@@ -138,9 +138,9 @@ namespace BSA2018_Hometask4.Controllers
                 service.Delete(flight);
                 return NoContent();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return NotFound();
+                return NotFound(ex);
             }
         }
     }
