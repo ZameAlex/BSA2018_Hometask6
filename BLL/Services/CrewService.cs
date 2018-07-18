@@ -24,11 +24,13 @@ namespace BSA2018_Hometask4.BLL.Services
             mapper = map;
             validator = rules;
         }
-        public void Create(CrewDto Crew)
+        public int Create(CrewDto Crew)
         {
             var validationResult = validator.Validate(Crew);
             if (validationResult.IsValid)
-                unit.Crew.Create(mapper.MapCrew(Crew));
+            {
+                return unit.Crew.Create(mapper.MapCrew(Crew));
+            }
             else
                 throw new ValidationException(validationResult.Errors);
         }
@@ -65,6 +67,7 @@ namespace BSA2018_Hometask4.BLL.Services
                 throw new ValidationException(validationResult.Errors);
             try
             {
+                Crew.ID = id;
                 unit.Crew.Update(mapper.MapCrew(Crew), id);
             }
             catch(ArgumentNullException)

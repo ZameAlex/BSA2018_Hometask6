@@ -23,11 +23,11 @@ namespace BSA2018_Hometask4.BLL.Services
             mapper = map;
             validator = rules;
         }
-        public void Create(TicketDto Ticket)
+        public int Create(TicketDto Ticket)
         {
             var validationResult = validator.Validate(Ticket);
             if (validationResult.IsValid)
-                unit.Tickets.Create(mapper.MapTicket(Ticket));
+                return unit.Tickets.Create(mapper.MapTicket(Ticket));
             else
                 throw new ValidationException(validationResult.Errors);
             
@@ -65,6 +65,7 @@ namespace BSA2018_Hometask4.BLL.Services
                 throw new ValidationException(validationResult.Errors);
             try
             {
+                Ticket.ID = id;
                 unit.Tickets.Update(mapper.MapTicket(Ticket), id);
             }
             catch (ArgumentNullException)

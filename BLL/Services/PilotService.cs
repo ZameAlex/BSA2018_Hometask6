@@ -23,11 +23,11 @@ namespace BSA2018_Hometask4.BLL.Services
             mapper = map;
             validator = rules;
         }
-        public void Create(PilotDto Pilot)
+        public int Create(PilotDto Pilot)
         {
             var validationResult = validator.Validate(Pilot);
             if (validationResult.IsValid)
-                unit.Pilots.Create(mapper.MapPilot(Pilot));
+                return unit.Pilots.Create(mapper.MapPilot(Pilot));
             else
                 throw new ValidationException(validationResult.Errors);
             
@@ -65,6 +65,7 @@ namespace BSA2018_Hometask4.BLL.Services
                 throw new ValidationException(validationResult.Errors);
             try
             {
+                Pilot.ID = id;
                 unit.Pilots.Update(mapper.MapPilot(Pilot), id);
             }
             catch (ArgumentNullException)

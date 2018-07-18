@@ -12,7 +12,7 @@ namespace DAL.Repository
 
         TEntity Get(int id);
 
-        void Create(TEntity entity);
+        int Create(TEntity entity);
 
         void Update(TEntity entity, int id);
 

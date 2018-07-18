@@ -12,6 +12,7 @@ namespace BSA2018_Hometask4.BLL.Validators
         {
             RuleFor(f => f.ID).Empty();
             RuleFor(c => c.Pilot).NotNull().GreaterThan(0);
+            RuleFor(c => c.Stewadress).NotNull();
             RuleForEach(c => c.Stewadress).NotNull().GreaterThan(0);
         }
     }

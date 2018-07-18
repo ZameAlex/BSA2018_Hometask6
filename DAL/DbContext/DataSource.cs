@@ -13,9 +13,10 @@ namespace BSA2018_Hometask4.DAL.DbContext
         {
             context.Database.Migrate();
 
+
+            #region Pilots initializing
             if (!context.Pilots.Any())
             {
-                #region Pilots initializing
                 context.Pilots.Add(
                     new Pilot
                     {
@@ -53,8 +54,9 @@ namespace BSA2018_Hometask4.DAL.DbContext
                     }
                     );
                 context.SaveChanges();
-                #endregion
             }
+            #endregion
+
             #region Stewardess initilizing
             if (!context.Stewadresses.Any())
             {
@@ -202,7 +204,7 @@ namespace BSA2018_Hometask4.DAL.DbContext
                     DepartureTime = new DateTime(2018, 1, 1, 12, 0, 0),
                     DestinationPoint = "Lviv",
                     DestinationTime = new DateTime(2018, 1, 1, 14, 0, 0),
-                    Number = new Guid(),
+                    Number = Guid.NewGuid(),
                     Tickets = context.Tickets.Where(x => x.Id < 2).ToList()
                 }
             );
@@ -213,7 +215,7 @@ namespace BSA2018_Hometask4.DAL.DbContext
                     DepartureTime = new DateTime(2018, 1, 1, 14, 0, 0),
                     DestinationPoint = "Berlin",
                     DestinationTime = new DateTime(2018, 1, 1, 17, 0, 0),
-                    Number = new Guid(),
+                    Number = Guid.NewGuid(),
                     Tickets = context.Tickets.Where(x => x.Id ==2).ToList()
                 }
                 );
@@ -223,7 +225,7 @@ namespace BSA2018_Hometask4.DAL.DbContext
                     DepartureTime = new DateTime(2018, 1, 1, 21, 0, 0),
                     DestinationPoint = "London",
                     DestinationTime = new DateTime(2018, 1, 2, 0, 0, 0),
-                    Number = new Guid(),
+                    Number = Guid.NewGuid(),
                     Tickets = context.Tickets.Where(x => x.Id >= 3).ToList()
                 }
                 );
@@ -307,7 +309,7 @@ namespace BSA2018_Hometask4.DAL.DbContext
                     {
                         Name = "Ukoz",
                         Created = new DateTime(2017, 11, 14),
-                        Type = context.Types.Local.Single(x => x.Id == 2),
+                        Type = context.Types.Single(x => x.Id == 2),
                         Expired = DateTime.Now.AddDays(700)
                     }
                     );

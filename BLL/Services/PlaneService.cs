@@ -24,11 +24,11 @@ namespace BSA2018_Hometask4.BLL.Services
             mapper = map;
             validator = rules;
         }
-        public void Create(PlaneDto Plane)
+        public int Create(PlaneDto Plane)
         {
             var validationResult = validator.Validate(Plane);
             if (validationResult.IsValid)
-                unit.Planes.Create(mapper.MapPlane(Plane));
+                return unit.Planes.Create(mapper.MapPlane(Plane));
             else
                 throw new ValidationException(validationResult.Errors);
             
@@ -66,6 +66,7 @@ namespace BSA2018_Hometask4.BLL.Services
                 throw new ValidationException(validationResult.Errors);
             try
             {
+                Plane.ID = id;
                 unit.Planes.Update(mapper.MapPlane(Plane), id);
             }
             catch (ArgumentNullException)

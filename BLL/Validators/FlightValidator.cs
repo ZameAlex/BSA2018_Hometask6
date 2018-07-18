@@ -15,6 +15,8 @@ namespace BSA2018_Hometask4.BLL.Validators
             RuleFor(f => f.DeparturePoint).NotNull().NotEmpty();
             RuleFor(f => f.Destination).NotNull().NotEmpty();
             RuleForEach(f => f.Tickets).NotNull().NotEmpty();
+            RuleFor(f => f.DepartureTime).NotEqual(f => f.DestinationTime);
+            RuleFor(f => f.DeparturePoint).NotEqual(f => f.Destination);
         }
     }
 }

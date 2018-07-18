@@ -23,11 +23,11 @@ namespace BSA2018_Hometask4.BLL.Services
             mapper = map;
             validator = rules;
         }
-        public void Create(StewadressDto Stewadress)
+        public int Create(StewadressDto Stewadress)
         {
             var validationResult = validator.Validate(Stewadress);
             if (validationResult.IsValid)
-                unit.Stewadresses.Create(mapper.MapStewadress(Stewadress));
+                return unit.Stewadresses.Create(mapper.MapStewadress(Stewadress));
             else
                 throw new ValidationException(validationResult.Errors);
 
@@ -65,6 +65,7 @@ namespace BSA2018_Hometask4.BLL.Services
                 throw new ValidationException(validationResult.Errors);
             try
             {
+                Stewadress.ID = id;
                 unit.Stewadresses.Update(mapper.MapStewadress(Stewadress), id);
             }
             catch (ArgumentNullException)

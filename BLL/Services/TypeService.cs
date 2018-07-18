@@ -23,11 +23,11 @@ namespace BSA2018_Hometask4.BLL.Services
             mapper = map;
             validator = rules;
         }
-        public void Create(TypeDto Type)
+        public int Create(TypeDto Type)
         {
             var validationResult = validator.Validate(Type);
             if (validationResult.IsValid)
-                unit.Types.Create(mapper.MapType(Type));
+                return unit.Types.Create(mapper.MapType(Type));
             else
                 throw new ValidationException(validationResult.Errors);
         }
@@ -64,6 +64,7 @@ namespace BSA2018_Hometask4.BLL.Services
                 throw new ValidationException(validationResult.Errors);
             try
             {
+                Type.ID = id;
                 unit.Types.Update(mapper.MapType(Type), id);
             }
             catch (ArgumentNullException)

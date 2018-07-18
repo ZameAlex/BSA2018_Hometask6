@@ -15,10 +15,11 @@ public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : DAL.
         DbContext = dbContext;
     }
 
-    public virtual void Create(TEntity entity)
+    public virtual int Create(TEntity entity)
     {
         DbContext.SetOf<TEntity>().Add(entity);
         DbContext.SaveChanges();
+        return entity.Id;
     }
 
     public virtual void Delete(TEntity entity)

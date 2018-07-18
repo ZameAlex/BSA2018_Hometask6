@@ -9,7 +9,7 @@ namespace BSA2018_Hometask4.BLL.Interfaces
     {
         TicketDto Get(int id);
         List<TicketDto> Get();
-        void Create(TicketDto flight);
+        int Create(TicketDto flight);
         void Delete(int id);
         void Delete(TicketDto flight);
         void Update(TicketDto flight, int id);

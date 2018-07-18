@@ -24,11 +24,11 @@ namespace BSA2018_Hometask4.BLL.Services
             mapper = map;
             validator = rules;
         }
-        public void Create(DepartureDto departure)
+        public int Create(DepartureDto departure)
         {
             var validationResult = validator.Validate(departure);
             if (validationResult.IsValid)
-                unit.Departures.Create(mapper.MapDeparture(departure));
+                return unit.Departures.Create(mapper.MapDeparture(departure));
             else
                 throw new ValidationException(validationResult.Errors);
             
@@ -66,6 +66,7 @@ namespace BSA2018_Hometask4.BLL.Services
                 throw new ValidationException(validationResult.Errors);
             try
             {
+                departure.ID = id;
                 unit.Departures.Update(mapper.MapDeparture(departure), id);
             }
             catch (ArgumentNullException)

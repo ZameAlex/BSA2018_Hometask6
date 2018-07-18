@@ -27,7 +27,7 @@ namespace DAL.UnitOfWork
         }
 
         #region Repositories
-        public BaseRepository<Flight> Flights
+        public IRepository<Flight> Flights
         {
             get
             {
@@ -37,7 +37,7 @@ namespace DAL.UnitOfWork
             }
         }
 
-        public BaseRepository<Ticket> Tickets
+        public IRepository<Ticket> Tickets
         {
             get
             {
@@ -47,7 +47,7 @@ namespace DAL.UnitOfWork
             }
         }
 
-        public BaseRepository<Departure> Departures
+        public IRepository<Departure> Departures
         {
             get
             {
@@ -56,7 +56,7 @@ namespace DAL.UnitOfWork
                 return departureRepository;
             }
         }
-        public BaseRepository<Stewadress> Stewadresses
+        public IRepository<Stewadress> Stewadresses
         {
             get
             {
@@ -65,7 +65,7 @@ namespace DAL.UnitOfWork
                 return stewadressRepository;
             }
         }
-        public BaseRepository<Pilot> Pilots
+        public IRepository<Pilot> Pilots
         {
             get
             {
@@ -74,7 +74,7 @@ namespace DAL.UnitOfWork
                 return pilotRepository;
             }
         }
-        public BaseRepository<Crew> Crew
+        public IRepository<Crew> Crew
         {
             get
             {
@@ -83,7 +83,7 @@ namespace DAL.UnitOfWork
                 return crewRepository;
             }
         }
-        public BaseRepository<Plane> Planes
+        public IRepository<Plane> Planes
         {
             get
             {
@@ -92,7 +92,7 @@ namespace DAL.UnitOfWork
                 return planeRepository;
             }
         }
-        public BaseRepository<PlaneType> Types
+        public IRepository<PlaneType> Types
         {
             get
             {

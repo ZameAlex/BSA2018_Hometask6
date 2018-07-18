@@ -12,9 +12,9 @@ namespace BSA2018_Hometask4.BLL.Validators
         {
             RuleFor(f => f.ID).Empty();
             RuleFor(d => d.Number).NotNull().NotEmpty();
-            RuleFor(d => d.Date).NotNull();
-            RuleFor(d => d.CrewId).NotNull().NotEqual(0);
-            RuleFor(d => d.PlaneId).NotNull().NotEqual(0);
+            RuleFor(d => d.Date).NotNull().NotEmpty();
+            RuleFor(d => d.CrewId).NotNull().GreaterThan(0);
+            RuleFor(d => d.PlaneId).NotNull().GreaterThan(0);
         }
     }
 }

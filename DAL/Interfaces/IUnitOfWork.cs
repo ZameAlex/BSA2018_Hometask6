@@ -9,14 +9,14 @@ namespace DAL.UnitOfWork
 {
     public interface IUnitOfWork : IDisposable
     {
-        BaseRepository<Flight> Flights { get; }
-        BaseRepository<Ticket> Tickets { get; }
-        BaseRepository<Departure> Departures { get; }
-        BaseRepository<Stewadress> Stewadresses { get; }
-        BaseRepository<Pilot> Pilots { get; }
-        BaseRepository<Crew> Crew { get; }
-        BaseRepository<Plane> Planes { get; }
-        BaseRepository<PlaneType> Types { get; }
+        IRepository<Flight> Flights { get; }
+        IRepository<Ticket> Tickets { get; }
+        IRepository<Departure> Departures { get; }
+        IRepository<Stewadress> Stewadresses { get; }
+        IRepository<Pilot> Pilots { get; }
+        IRepository<Crew> Crew { get; }
+        IRepository<Plane> Planes { get; }
+        IRepository<PlaneType> Types { get; }
 
         int SaveChanges();
 

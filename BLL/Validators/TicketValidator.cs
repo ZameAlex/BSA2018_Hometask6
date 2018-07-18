@@ -10,7 +10,7 @@ namespace BSA2018_Hometask4.BLL.Validators
     {
         public TicketValidator()
         {
-            RuleFor(f => f.ID).Equals(0);
+            RuleFor(f => f.ID).Empty();
             RuleFor(t => t.Number).NotNull().NotEmpty();
             RuleFor(t => t.Price).NotNull().GreaterThan(0);
         }
