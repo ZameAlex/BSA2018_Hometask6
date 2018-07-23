@@ -10,7 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BSA2018_Hometask6.Tests
+namespace BSA2018_Hometask6.Tests.ControllerTests
 {
     [TestFixture]
     public class Contoller_Tests

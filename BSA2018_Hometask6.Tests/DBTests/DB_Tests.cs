@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BSA2018_Hometask6.Tests
+namespace BSA2018_Hometask6.Tests.DBTests
 {
     [TestFixture]
     public class DB_Tests
