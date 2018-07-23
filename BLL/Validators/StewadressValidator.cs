@@ -6,9 +6,9 @@ using BSA2018_Hometask4.Shared.DTO;
 
 namespace BSA2018_Hometask4.BLL.Validators
 {
-    public class StewadressValidator:AbstractValidator<StewadressDto>
+    public class StewardessValidator:AbstractValidator<StewardessDto>
     {
-        public StewadressValidator()
+        public StewardessValidator()
         {
             RuleFor(f => f.ID).Empty(); 
             RuleFor(s => s.FirstName).NotNull().NotEmpty().MaximumLength(20);

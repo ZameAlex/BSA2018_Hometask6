@@ -13,5 +13,10 @@ namespace BSA2018_Hometask4.Shared.DTO
         public string Destination { get; set; }
         public DateTime DestinationTime { get; set; }
         public List<int> Tickets { get; set; }
+
+        public List<int> Select(Func<object, object> p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

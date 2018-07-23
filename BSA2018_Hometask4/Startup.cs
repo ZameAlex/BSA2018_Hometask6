@@ -37,7 +37,7 @@ namespace BSA2018_Hometask4
             services.AddScoped<IFlightService, FlightService>();
             services.AddScoped<ITicketService, TicketService>();
             services.AddScoped<IDepartureService, DepartureService>();
-            services.AddScoped<IStewadressService, StewadressService>();
+            services.AddScoped<IStewardessService, StewardessService>();
             services.AddScoped<IPilotService, PilotService>();
             services.AddScoped<IPlaneService, PlaneService>();
             services.AddScoped<ICrewService, CrewService>();
@@ -46,7 +46,7 @@ namespace BSA2018_Hometask4
             services.AddTransient<AbstractValidator<FlightDto>, FlightValidator>();
             services.AddTransient<AbstractValidator<DepartureDto>, DepartureValidator>();
             services.AddTransient<AbstractValidator<TicketDto>, TicketValidator>();
-            services.AddTransient<AbstractValidator<StewadressDto>, StewadressValidator>();
+            services.AddTransient<AbstractValidator<StewardessDto>, StewardessValidator>();
             services.AddTransient<AbstractValidator<PilotDto>, PilotValidator>();
             services.AddTransient<AbstractValidator<CrewDto>, CrewValidator>();
             services.AddTransient<AbstractValidator<PlaneDto>, PlaneValidator>();

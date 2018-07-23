@@ -37,7 +37,7 @@ namespace BSA2018_Hometask6.Tests.Fake.UnitOfWork
 
         public IRepository<Departure> Departures => departureRepository;
 
-        public IRepository<Stewadress> Stewadresses => stewadressRepository;
+        public IRepository<Stewardess> Stewadresses => stewadressRepository;
 
         public IRepository<Pilot> Pilots => pilotRepository;
 

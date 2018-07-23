@@ -58,50 +58,50 @@ namespace BSA2018_Hometask4.DAL.DbContext
             #endregion
 
             #region Stewardess initilizing
-            if (!context.Stewadresses.Any())
+            if (!context.Stewardesses.Any())
             {
-                context.Stewadresses.Add(
-                new Stewadress
+                context.Stewardesses.Add(
+                new Stewardess
                 {
                     Name = "Tanya",
                     LastName = "Sinchuk",
                     Birthday = new DateTime(1996, 8, 27)
                 }
                 );
-                context.Stewadresses.Add(
-                    new Stewadress
+                context.Stewardesses.Add(
+                    new Stewardess
                     {
                         Name = "Viktorua",
                         LastName = "Dachuk",
                         Birthday = new DateTime(1995, 3, 18)
                     }
                     );
-                context.Stewadresses.Add(
-                   new Stewadress
+                context.Stewardesses.Add(
+                   new Stewardess
                    {
                        Name = "Kate",
                        LastName = "Kostash",
                        Birthday = new DateTime(1996, 12, 5)
                    }
                    );
-                context.Stewadresses.Add(
-                   new Stewadress
+                context.Stewardesses.Add(
+                   new Stewardess
                    {
                        Name = "Svetlana",
                        LastName = "Polyshuk",
                        Birthday = new DateTime(1998, 2, 23)
                    }
                    );
-                context.Stewadresses.Add(
-                   new Stewadress
+                context.Stewardesses.Add(
+                   new Stewardess
                    {
                        Name = "Natalia",
                        LastName = "Dorohova",
                        Birthday = new DateTime(1996, 6, 21)
                    }
                    );
-                context.Stewadresses.Add(
-                   new Stewadress
+                context.Stewardesses.Add(
+                   new Stewardess
                    {
                        Name = "Maryna",
                        LastName = "Medvin",
@@ -118,33 +118,33 @@ namespace BSA2018_Hometask4.DAL.DbContext
                 context.Crew.Add(new Crew
                 {
                     Pilot = context.Pilots.Single(x => x.Id == 1),
-                    Stewadresses = new List<Stewadress>()
+                    Stewadresses = new List<Stewardess>()
             {
-                context.Stewadresses.Single(x=>x.Id==1),
-                context.Stewadresses.Single(x=>x.Id==2),
-                context.Stewadresses.Single(x=>x.Id==6)
+                context.Stewardesses.Single(x=>x.Id==1),
+                context.Stewardesses.Single(x=>x.Id==2),
+                context.Stewardesses.Single(x=>x.Id==6)
             }
                 }
                 );
                 context.Crew.Add(new Crew
                 {
                     Pilot = context.Pilots.Single(x => x.Id == 2),
-                    Stewadresses = new List<Stewadress>()
+                    Stewadresses = new List<Stewardess>()
             {
-                context.Stewadresses.Single(x=>x.Id==3),
-                context.Stewadresses.Single(x=>x.Id==4),
-                context.Stewadresses.Single(x=>x.Id==5)
+                context.Stewardesses.Single(x=>x.Id==3),
+                context.Stewardesses.Single(x=>x.Id==4),
+                context.Stewardesses.Single(x=>x.Id==5)
             }
                 }
                 );
                 context.Crew.Add(new Crew
                 {
                     Pilot = context.Pilots.Single(x => x.Id == 3),
-                    Stewadresses = new List<Stewadress>()
+                    Stewadresses = new List<Stewardess>()
             {
-                context.Stewadresses.Single(x=>x.Id==1),
-                context.Stewadresses.Single(x=>x.Id==3),
-                context.Stewadresses.Single(x=>x.Id==5)
+                context.Stewardesses.Single(x=>x.Id==1),
+                context.Stewardesses.Single(x=>x.Id==3),
+                context.Stewardesses.Single(x=>x.Id==5)
             }
                 }
                 );

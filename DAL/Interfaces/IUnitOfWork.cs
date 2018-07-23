@@ -12,7 +12,7 @@ namespace DAL.UnitOfWork
         IRepository<Flight> Flights { get; }
         IRepository<Ticket> Tickets { get; }
         IRepository<Departure> Departures { get; }
-        IRepository<Stewadress> Stewadresses { get; }
+        IRepository<Stewardess> Stewadresses { get; }
         IRepository<Pilot> Pilots { get; }
         IRepository<Crew> Crew { get; }
         IRepository<Plane> Planes { get; }

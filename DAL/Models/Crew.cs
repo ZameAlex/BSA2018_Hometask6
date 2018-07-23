@@ -9,6 +9,6 @@ namespace DAL.Models
     {
 
         public Pilot Pilot { get; set; }
-        public List<Stewadress> Stewadresses { get; set; }
+        public List<Stewardess> Stewadresses { get; set; }
     }
 }

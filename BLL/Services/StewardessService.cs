@@ -11,19 +11,19 @@ using System.Text;
 
 namespace BSA2018_Hometask4.BLL.Services
 {
-    public class StewadressService : IStewadressService
+    public class StewardessService : IStewardessService
     {
         readonly IUnitOfWork unit;
         readonly IMapper mapper;
-        readonly AbstractValidator<StewadressDto> validator;
+        readonly AbstractValidator<StewardessDto> validator;
 
-        public StewadressService(IUnitOfWork uow, IMapper map, AbstractValidator<StewadressDto> rules)
+        public StewardessService(IUnitOfWork uow, IMapper map, AbstractValidator<StewardessDto> rules)
         {
             unit = uow;
             mapper = map;
             validator = rules;
         }
-        public int Create(StewadressDto Stewadress)
+        public int Create(StewardessDto Stewadress)
         {
             var validationResult = validator.Validate(Stewadress);
             if (validationResult.IsValid)
@@ -38,19 +38,19 @@ namespace BSA2018_Hometask4.BLL.Services
             unit.Stewadresses.Delete(id);
         }
 
-        public void Delete(StewadressDto Stewadress)
+        public void Delete(StewardessDto Stewadress)
         {
             unit.Stewadresses.Delete(mapper.MapStewadress(Stewadress));
         }
 
-        public StewadressDto Get(int id)
+        public StewardessDto Get(int id)
         {
             return mapper.MapStewadress(unit.Stewadresses.Get(id));
         }
 
-        public List<StewadressDto> Get()
+        public List<StewardessDto> Get()
         {
-            var result = new List<StewadressDto>();
+            var result = new List<StewardessDto>();
             foreach (var item in unit.Stewadresses.Get())
             {
                 result.Add(mapper.MapStewadress(item));
@@ -58,7 +58,7 @@ namespace BSA2018_Hometask4.BLL.Services
             return result;
         }
 
-        public void Update(StewadressDto Stewadress, int id)
+        public void Update(StewardessDto Stewadress, int id)
         {
             var validationResult = validator.Validate(Stewadress);
             if (!validationResult.IsValid)

@@ -87,7 +87,7 @@ namespace BSA2018_Hometask4.BLL.Services
                 throw new ValidationException(validationResult.Errors);
             try
             {
-                (unit.Planes as PlaneRepository).Update(DateTime.Now.AddDays(expires.Days), id);
+                unit.Planes.Update(id, new dynamic[] { DateTime.Now.AddDays(expires.Days) });
             }
             catch (ArgumentNullException)
             {

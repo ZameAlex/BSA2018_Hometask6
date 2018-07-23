@@ -86,7 +86,7 @@ namespace BSA2018_Hometask4.BLL.Services
                 throw new ValidationException(validationResult.Errors);
             try
             {
-                (unit.Pilots as PilotRepository).Update(experience, id);
+                unit.Pilots.Update(id, new dynamic[] { experience });
             }
             catch (ArgumentNullException)
             {

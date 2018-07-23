@@ -14,8 +14,8 @@ namespace BSA2018_Hometask4.BLL.Interfaces
         PilotDto MapPilot(Pilot value);
         Pilot MapPilot(PilotDto value);
 
-        StewadressDto MapStewadress(Stewadress value);
-        Stewadress MapStewadress(StewadressDto value);
+        StewardessDto MapStewadress(Stewardess value);
+        Stewardess MapStewadress(StewardessDto value);
 
         PlaneDto MapPlane(Plane value);
         Plane MapPlane(PlaneDto value);

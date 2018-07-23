@@ -26,9 +26,9 @@ namespace DAL.Repository
             base.Update(entity, id);
         }
 
-        public void Update(int experience,int id)
+        public override void Update(int id, dynamic[] dynamics)
         {
-            Get(id).Experience = experience;
+            Get(id).Experience = dynamics[0];
             DbContext.SaveChanges();
         }
     }

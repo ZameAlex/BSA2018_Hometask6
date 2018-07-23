@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DAL.Models
 {
-    public class Stewadress:Entity
+    public class Stewardess:Entity
     {
 
         [StringLength(20)]

@@ -29,11 +29,11 @@ namespace DAL.Repository
             base.Update(entity, id);
         }
 
-        public void Update(DateTime departure, DateTime destination, int id)
+        public override void Update(int id, dynamic[] dynamics)
         {
             var temp = Get(id);
-            temp.DepartureTime = departure;
-            temp.DestinationTime = destination;
+            temp.DepartureTime = dynamics[0];
+            temp.DestinationTime = dynamics[1];
             DbContext.Update(temp);
             DbContext.SaveChanges();
         }

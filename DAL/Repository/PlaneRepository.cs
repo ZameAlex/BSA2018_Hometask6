@@ -25,9 +25,9 @@ namespace DAL.Repository
             base.Update(entity, id);
         }
 
-        public void Update(DateTime expires,int id)
+        public override void Update(int id, dynamic[] dynamics)
         {
-            Get(id).Expired = expires;
+            Get(id).Expired = dynamics[0];
             DbContext.SaveChanges();
         }
     }

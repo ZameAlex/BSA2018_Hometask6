@@ -54,5 +54,10 @@ namespace BSA2018_Hometask6.Tests.Fake.Repositories
                 }
                 );
         }
+        public override void Update(int id, dynamic[] dynamics)
+        {
+            var temp = Get(id);
+            temp.Date = dynamics[0];
+        }
     }
 }

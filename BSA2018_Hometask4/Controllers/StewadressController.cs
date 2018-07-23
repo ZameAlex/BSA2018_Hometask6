@@ -13,11 +13,11 @@ namespace BSA2018_Hometask4.Controllers
 {
     [Route("v1/api/stewadress")]
     [ApiController]
-    public class StewadresssController : ControllerBase
+    public class StewardesssController : ControllerBase
     {
-        readonly IStewadressService service;
+        readonly IStewardessService service;
 
-        public StewadresssController(IStewadressService stewadressService)
+        public StewardesssController(IStewardessService stewadressService)
         {
             service = stewadressService;
         }
@@ -51,7 +51,7 @@ namespace BSA2018_Hometask4.Controllers
 
         // POST: v1/api/stewadress
         [HttpPost]
-        public IActionResult Post([FromBody]StewadressDto value)
+        public IActionResult Post([FromBody]StewardessDto value)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace BSA2018_Hometask4.Controllers
 
         // PUT: v1/api/stewadress/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] StewadressDto stewadress)
+        public IActionResult Put(int id, [FromBody] StewardessDto stewadress)
         {
             try
             {
@@ -108,7 +108,7 @@ namespace BSA2018_Hometask4.Controllers
 
         // DELETE: v1/api/stewadress
         [HttpDelete]
-        public IActionResult Delete([FromBody] StewadressDto stewadress)
+        public IActionResult Delete([FromBody] StewardessDto stewadress)
         {
             try
             {

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BSA2018_Hometask4.Shared.DTO
 {
-    public class StewadressDto
+    public class StewardessDto
     {
         public int ID { get; set; }
         public string FirstName { get; set; }

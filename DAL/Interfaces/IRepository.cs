@@ -16,6 +16,8 @@ namespace DAL.Repository
 
         void Update(TEntity entity, int id);
 
+        void Update(int id, dynamic[] dynamics);
+
         void Delete(TEntity entity);
 
         void Delete(int id);

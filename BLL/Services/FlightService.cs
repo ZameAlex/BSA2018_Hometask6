@@ -91,7 +91,7 @@ namespace BSA2018_Hometask4.BLL.Services
                 throw new ValidationException(validationResult.Errors);
             try
             {
-                (unit.Flights as FlightRepository).Update(departureTime, destinationTime, id);
+                unit.Flights.Update(id, new dynamic[] { departureTime, destinationTime });
             }
             catch (ArgumentNullException)
             {

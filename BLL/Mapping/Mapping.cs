@@ -88,9 +88,9 @@ namespace BSA2018_Hometask4.BLL.Mapping
             };
         }
 
-        public StewadressDto MapStewadress(Stewadress value)
+        public StewardessDto MapStewadress(Stewardess value)
         {
-            return new StewadressDto
+            return new StewardessDto
             {
                 ID = value.Id,
                 FirstName = value.Name,
@@ -99,9 +99,9 @@ namespace BSA2018_Hometask4.BLL.Mapping
             };
         }
 
-        public Stewadress MapStewadress(StewadressDto value)
+        public Stewardess MapStewadress(StewardessDto value)
         {
-            return new Stewadress
+            return new Stewardess
             {
                 Id = value.ID,
                 Name = value.FirstName,
@@ -162,7 +162,7 @@ namespace BSA2018_Hometask4.BLL.Mapping
                 Name = value.Name,
                 Type = value.Type.Id,
                 Created = value.Created,
-                Expires = DateTime.Now - value.Expired
+                Expires = value.Expired - DateTime.Now
             };
         }
 

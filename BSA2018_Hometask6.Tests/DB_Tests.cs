@@ -24,9 +24,11 @@ namespace BSA2018_Hometask6.Tests
         public void SetContext()
         {
             context = new AirportContext();
+            context.Database.EnsureDeleted();
             new DataSource(context);
             unitOfWork = new UnitOfWork();
             mapper = new Mapping(unitOfWork);
+            
         }
     
         [Test]
@@ -151,7 +153,7 @@ namespace BSA2018_Hometask6.Tests
         }
 
         [Test]
-        public void Update_Plane_When_id_is_not_in_db_Then_throws_ArgumentOutOfRangeException()
+        public void Update_Plane_When_id_is_not_in_db_Then_throws_NullReferenceException()
         {
             var planeService = new PlaneService(unitOfWork, mapper, new PlaneValidator());
             var id = 1123;
@@ -162,7 +164,7 @@ namespace BSA2018_Hometask6.Tests
                 Created = new DateTime(2013, 08, 03),
                 Expires = new TimeSpan(750, 0, 0, 0)
             };
-            Assert.Throws<ArgumentOutOfRangeException>(() => planeService.Update(plane, id));
+            Assert.Throws<NullReferenceException>(() => planeService.Update(plane, id));
         }
     }
 }

@@ -46,5 +46,10 @@ namespace BSA2018_Hometask6.Tests.Fake.Repositories
             var temp = entities.FindIndex(x => x.Id == id);
             entities[temp] = entity;
         }
+
+        public virtual void Update(int id, dynamic[] dynamics)
+        {
+
+        }
     }
 }

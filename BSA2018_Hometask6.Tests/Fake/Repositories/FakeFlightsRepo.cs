@@ -50,5 +50,11 @@ namespace BSA2018_Hometask6.Tests.Fake.Repositories
                 f.Tickets.ForEach(t => t.Flight = f);
             }
         }
+        public override void Update(int id, dynamic[] dynamics)
+        {
+            var temp = Get(id);
+            temp.DepartureTime = dynamics[0];
+            temp.DestinationTime = dynamics[1];
+        }
     }
 }

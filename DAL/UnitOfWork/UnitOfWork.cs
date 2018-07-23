@@ -15,7 +15,7 @@ namespace DAL.UnitOfWork
         private DepartureRepository departureRepository;
         private PilotRepository pilotRepository;
         private PlaneRepository planeRepository;
-        private StewadressRepository stewadressRepository;
+        private StewardessRepository stewadressRepository;
         private PlaneTypeRepository typeRepository;
         private TicketRepository ticketRepository;
 
@@ -56,12 +56,12 @@ namespace DAL.UnitOfWork
                 return departureRepository;
             }
         }
-        public IRepository<Stewadress> Stewadresses
+        public IRepository<Stewardess> Stewadresses
         {
             get
             {
                 if (stewadressRepository == null)
-                    stewadressRepository = new StewadressRepository(db);
+                    stewadressRepository = new StewardessRepository(db);
                 return stewadressRepository;
             }
         }

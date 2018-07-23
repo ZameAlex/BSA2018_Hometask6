@@ -218,7 +218,7 @@ namespace BSA2018_Hometask6.Tests
         [Test]
         public void ExceptionThrows_When_StewardessModel_is_not_valid_Then_throws_ValidatorException()
         {
-            var stewadress1 = new StewadressDto()
+            var stewadress1 = new StewardessDto()
             {
                 ID = -1,
                 Birthday = DateTime.Now.AddYears(-20),
@@ -226,21 +226,21 @@ namespace BSA2018_Hometask6.Tests
                 LastName = "Black"
             };
 
-            var stewadress2 = new StewadressDto()
+            var stewadress2 = new StewardessDto()
             {
                 Birthday = DateTime.Now.AddYears(-17),
                 FirstName = "Ksu",
                 LastName = "Black"
             };
 
-            var stewadress3 = new StewadressDto()
+            var stewadress3 = new StewardessDto()
             {
                 Birthday = DateTime.Now.AddYears(-20),
                 LastName = "Black"
             };
 
 
-            var stewadressService = new StewadressService(unitOfWork, A.Fake<IMapper>(), new StewadressValidator());
+            var stewadressService = new StewardessService(unitOfWork, A.Fake<IMapper>(), new StewardessValidator());
             Assert.Throws<FluentValidation.ValidationException>(() => stewadressService.Create(stewadress1));
             Assert.Throws<FluentValidation.ValidationException>(() => stewadressService.Create(stewadress2));
             Assert.Throws<FluentValidation.ValidationException>(() => stewadressService.Create(stewadress3));
@@ -445,14 +445,14 @@ namespace BSA2018_Hometask6.Tests
         [Test]
         public void Mapper_When_Add_Stewardess_and_update_to_invalid_Then_throws_ValidationException()
         {
-            var stewadress1 = new StewadressDto()
+            var stewadress1 = new StewardessDto()
             {
                 Birthday = DateTime.Now.AddYears(-20),
                 FirstName = "Ksu",
                 LastName = "Black"
             };
 
-            var stewadress2 = new StewadressDto()
+            var stewadress2 = new StewardessDto()
             {
                 Birthday = DateTime.Now.AddYears(-17),
                 FirstName = "Ksu",
@@ -460,7 +460,7 @@ namespace BSA2018_Hometask6.Tests
             };
 
 
-            var stewadressService = new StewadressService(unitOfWork, mapper, new StewadressValidator());
+            var stewadressService = new StewardessService(unitOfWork, mapper, new StewardessValidator());
             var id = stewadressService.Create(stewadress1);
             Assert.Throws<FluentValidation.ValidationException>(() => stewadressService.Update(stewadress2, id));
         }

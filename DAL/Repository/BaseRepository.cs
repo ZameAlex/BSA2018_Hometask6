@@ -49,4 +49,9 @@ public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : DAL.
     {
         DbContext.SaveChanges();
     }
+
+    public virtual void Update(int id, dynamic[] dynamics)
+    {
+        DbContext.SaveChanges();
+    }
 }

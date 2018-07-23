@@ -2,6 +2,7 @@
 using DAL.Repository;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace BSA2018_Hometask6.Tests.Fake.Repositories
@@ -54,6 +55,10 @@ namespace BSA2018_Hometask6.Tests.Fake.Repositories
                     );
             }
 
-        
+        public override void Update(int id, dynamic[] dynamics)
+        {
+            var temp = Get(id);
+            temp.Experience = dynamics[0];
+        }
     }
 }

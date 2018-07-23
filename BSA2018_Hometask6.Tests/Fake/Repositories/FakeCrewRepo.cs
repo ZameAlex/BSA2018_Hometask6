@@ -16,7 +16,7 @@ namespace BSA2018_Hometask6.Tests.Fake.Repositories
             {
                 Id = 1,
                 Pilot = pRepo.entities.Single(x => x.Id == 1),
-                Stewadresses = new List<Stewadress>()
+                Stewadresses = new List<Stewardess>()
             {
                 sRepo.entities.Single(x=>x.Id==1),
                 sRepo.entities.Single(x=>x.Id==2),
@@ -28,7 +28,7 @@ namespace BSA2018_Hometask6.Tests.Fake.Repositories
             {
                 Id = 2,
                 Pilot = pRepo.entities.Single(x => x.Id == 2),
-                Stewadresses = new List<Stewadress>()
+                Stewadresses = new List<Stewardess>()
             {
                 sRepo.entities.Single(x=>x.Id==3),
                 sRepo.entities.Single(x=>x.Id==4),
@@ -40,7 +40,7 @@ namespace BSA2018_Hometask6.Tests.Fake.Repositories
             {
                 Id = 3,
                 Pilot = pRepo.entities.Single(x => x.Id == 3),
-                Stewadresses = new List<Stewadress>()
+                Stewadresses = new List<Stewardess>()
             {
                 sRepo.entities.Single(x=>x.Id==1),
                 sRepo.entities.Single(x=>x.Id==3),

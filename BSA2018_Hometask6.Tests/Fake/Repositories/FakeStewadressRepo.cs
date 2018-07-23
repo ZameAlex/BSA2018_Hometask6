@@ -5,12 +5,12 @@ using System.Text;
 
 namespace BSA2018_Hometask6.Tests.Fake.Repositories
 {
-    public class FakeStewadressRepo:FakeRepo<Stewadress>
+    public class FakeStewadressRepo:FakeRepo<Stewardess>
     {
         public FakeStewadressRepo()
         {
             entities.Add(
-                new Stewadress
+                new Stewardess
                 {
                     Id=1,
                     Name = "Tanya",
@@ -19,7 +19,7 @@ namespace BSA2018_Hometask6.Tests.Fake.Repositories
                 }
                 );
             entities.Add(
-                new Stewadress
+                new Stewardess
                 {
                     Id = 2,
                     Name = "Viktorua",
@@ -28,7 +28,7 @@ namespace BSA2018_Hometask6.Tests.Fake.Repositories
                 }
                 );
             entities.Add(
-               new Stewadress
+               new Stewardess
                {
                    Id = 3,
                    Name = "Kate",
@@ -37,7 +37,7 @@ namespace BSA2018_Hometask6.Tests.Fake.Repositories
                }
                );
             entities.Add(
-               new Stewadress
+               new Stewardess
                {
                    Id = 4,
                    Name = "Svetlana",
@@ -46,7 +46,7 @@ namespace BSA2018_Hometask6.Tests.Fake.Repositories
                }
                );
             entities.Add(
-               new Stewadress
+               new Stewardess
                {
                    Id = 5,
                    Name = "Natalia",
@@ -55,7 +55,7 @@ namespace BSA2018_Hometask6.Tests.Fake.Repositories
                }
                );
             entities.Add(
-               new Stewadress
+               new Stewardess
                {
                    Id = 6,
                    Name = "Maryna",
